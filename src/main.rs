@@ -1,8 +1,7 @@
-use adventofcode::day4;
+use adventofcode::execute;
 
 fn main() {
     println!("Welcome to my advent of code implementation. Lets gooooo!");
 
-    day4::part1();
-    day4::part2();
+    execute();
 }

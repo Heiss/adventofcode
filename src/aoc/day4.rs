@@ -99,7 +99,7 @@ impl Field {
     }
 }
 
-pub fn part1() {
+pub fn part1() -> Option<(u32, u32, u32)> {
     let content = read_in("inputs/day4.txt");
     let mut iter = content.split("\n\n");
     let first_line = iter.next().expect("no first line");
@@ -114,12 +114,10 @@ pub fn part1() {
         .split(",")
         .find_map(|v| bingo_fields.iter_mut().find_map(|b| b.check_number(v)));
 
-    if let Some((field_sum, num, sum)) = bingo_run {
-        println!("Day4 - Part1: {} * {} = {}", field_sum, num, sum);
-    }
+    bingo_run
 }
 
-pub fn part2() {
+pub fn part2() -> Option<(u32, u32, u32)> {
     let content = read_in("inputs/day4.txt");
     let mut iter = content.split("\n\n");
     let first_line = iter.next().expect("no first line");
@@ -166,11 +164,5 @@ pub fn part2() {
             .collect();
     }
 
-    let mut result = "Not working.".to_string();
-
-    if let Some((field_sum, num, sum)) = latest_field {
-        result = format!("{} * {} = {}", field_sum, num, sum);
-    }
-
-    println!("Day4 - Part2: {}", result);
+    latest_field
 }

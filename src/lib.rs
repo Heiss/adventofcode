@@ -1,2 +1,4 @@
-pub mod day4;
+mod aoc;
 mod helper;
+
+pub use aoc::*;
