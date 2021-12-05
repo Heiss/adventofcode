@@ -53,7 +53,7 @@ impl Field {
             }
         }
 
-        return false;
+        false
     }
 
     fn bingo_row(&self, row: usize) -> bool {
