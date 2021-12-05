@@ -5,7 +5,8 @@
 		"ms-vsliveshare.vsliveshare",
 		"matklad.rust-analyzer",
 		"serayuzgur.crates",
-		"vadimcn.vscode-lldb"
+		"vadimcn.vscode-lldb",
+		"polypus74.trusty-rusty-snippets"
 	],
 	"dockerFile": "Dockerfile",
 	"settings": {
