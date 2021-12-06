@@ -117,14 +117,19 @@ pub fn part2() -> String {
     day5(&contents, true)
 }
 
-#[test]
-fn test_part1() {
-    let input = "0,9 -> 5,9\n8,0 -> 0,8\n9,4 -> 3,4\n2,2 -> 2,1\n7,0 -> 7,4\n6,4 -> 2,0\n0,9 -> 2,9\n3,4 -> 1,4\n0,0 -> 8,8\n5,5 -> 8,2";
-    assert_eq!(day5(input, false), "5");
-}
+#[cfg(test)]
+mod test_super {
+    use super::*;
 
-#[test]
-fn test_part2() {
-    let input = "0,9 -> 5,9\n8,0 -> 0,8\n9,4 -> 3,4\n2,2 -> 2,1\n7,0 -> 7,4\n6,4 -> 2,0\n0,9 -> 2,9\n3,4 -> 1,4\n0,0 -> 8,8\n5,5 -> 8,2";
-    assert_eq!(day5(input, true), "12");
+    #[test]
+    fn test_part1() {
+        let input = "0,9 -> 5,9\n8,0 -> 0,8\n9,4 -> 3,4\n2,2 -> 2,1\n7,0 -> 7,4\n6,4 -> 2,0\n0,9 -> 2,9\n3,4 -> 1,4\n0,0 -> 8,8\n5,5 -> 8,2";
+        assert_eq!(day5(input, false), "5");
+    }
+
+    #[test]
+    fn test_part2() {
+        let input = "0,9 -> 5,9\n8,0 -> 0,8\n9,4 -> 3,4\n2,2 -> 2,1\n7,0 -> 7,4\n6,4 -> 2,0\n0,9 -> 2,9\n3,4 -> 1,4\n0,0 -> 8,8\n5,5 -> 8,2";
+        assert_eq!(day5(input, true), "12");
+    }
 }

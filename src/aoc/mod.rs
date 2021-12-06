@@ -3,9 +3,10 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 pub fn execute() {
-    let functions = [day1(), day2(), day3(), day4(), day5()];
+    let functions = [day1(), day2(), day3(), day4(), day5(), day6()];
     for (i, function) in functions.iter().enumerate() {
         for (part, f) in function.iter().enumerate() {
             println!("Day {} - Part {}: {}", i + 1, part + 1, f);
@@ -14,28 +15,13 @@ pub fn execute() {
 }
 
 fn day1() -> Vec<String> {
-    let mut result = Vec::new();
-
-    result.push(day1::part1());
-    result.push(day1::part2());
-
-    result
+    [day1::part1(), day1::part2()].to_vec()
 }
 fn day2() -> Vec<String> {
-    let mut result = Vec::new();
-
-    result.push("Was replaced with part2.".into());
-    result.push(day2::part1());
-
-    result
+    [("Was replaced with part2.".into()), (day2::part1())].to_vec()
 }
 fn day3() -> Vec<String> {
-    let mut result = Vec::new();
-
-    result.push(day3::part1());
-    result.push(day3::part2());
-
-    result
+    [day3::part1(), day3::part2()].to_vec()
 }
 
 fn day4() -> Vec<String> {
@@ -52,10 +38,17 @@ fn day4() -> Vec<String> {
 }
 
 fn day5() -> Vec<String> {
-    let mut result = Vec::new();
+    [
+        format!("overlaps: {}", day5::part1()),
+        format!("overlaps: {}", day5::part2()),
+    ]
+    .to_vec()
+}
 
-    result.push(format!("overlaps: {}", day5::part1()));
-    result.push(format!("overlaps: {}", day5::part2()));
-
-    result
+fn day6() -> Vec<String> {
+    [
+        format!("fishes: {}", day6::part1()),
+        format!("fishes: {}", day6::part2()),
+    ]
+    .to_vec()
 }
