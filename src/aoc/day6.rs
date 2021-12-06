@@ -41,6 +41,7 @@ impl Default for Lanternfish {
     }
 }
 
+/// This is a paralleled implementation.
 fn day6_part1(contents: &str, days: u32) -> usize {
     let mut fishes: Vec<Lanternfish> = contents
         .split(",")
@@ -59,6 +60,7 @@ fn day6_part1(contents: &str, days: u32) -> usize {
     fishes.len()
 }
 
+/// This is a faster implementation.
 fn day6_part2(contents: &str, days: u32) -> usize {
     let mut fishes: HashMap<u8, u64> = HashMap::new();
 
