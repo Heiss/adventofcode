@@ -71,7 +71,6 @@ fn day5(contents: &str, diagonal: bool) -> String {
         let mut dx = x2 - x1;
 
         if !diagonal && (dx != 0 && dy != 0) {
-            println!("skip");
             continue;
         }
 
@@ -89,8 +88,6 @@ fn day5(contents: &str, diagonal: bool) -> String {
         let mut points: Vec<(usize, usize)> = Vec::new();
         points.push((x2 as usize, y2 as usize));
 
-        println!("x {} y {}", dx, dy);
-
         while temp_x != x2 || temp_y != y2 {
             points.push((temp_x as usize, temp_y as usize));
 
@@ -98,9 +95,7 @@ fn day5(contents: &str, diagonal: bool) -> String {
             temp_y += dy;
         }
 
-        println!("{:?}", points);
         for (i, j) in points {
-            println!("{} {}", i, j);
             arr[i][j] += 1;
         }
     }
