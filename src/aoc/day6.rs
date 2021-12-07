@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::hash::Hash;
 
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
@@ -72,7 +71,7 @@ fn day6_part2(contents: &str, days: u32) -> usize {
     for _ in 0..days {
         let birth = *fishes.get(&0).unwrap_or(&0);
 
-        for i in (1..FIRST_CYCLE) {
+        for i in 1..FIRST_CYCLE {
             fishes.insert(i - 1, *fishes.get(&i).unwrap_or(&0));
         }
 
