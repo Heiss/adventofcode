@@ -17,7 +17,7 @@ fn median(list: &Vec<u32>) -> u32 {
     }
 }
 
-fn fac(max: u32) -> u32 {
+fn termial(max: u32) -> u32 {
     let mut res = 0;
     for i in 1..=max {
         res += i;
@@ -44,7 +44,11 @@ fn day7_part2(contents: &str) -> u32 {
 
     let avg: u32 = crabs.iter().sum::<u32>() / crabs.len() as u32;
 
-    crabs.iter().map(|&v| fac(avg.max(v) - avg.min(v))).sum()
+    crabs
+        .iter()
+        .map(|&v| avg.max(v) - avg.min(v))
+        .map(termial)
+        .sum()
 }
 
 pub fn part1() -> String {
@@ -76,10 +80,11 @@ mod test_super {
     }
 
     #[test]
-    fn test_fac() {
-        assert_eq!(fac(1), 1);
-        assert_eq!(fac(2), 3);
-        assert_eq!(fac(3), 6);
-        assert_eq!(fac(4), 10);
+    fn test_termial() {
+        assert_eq!(termial(0), 0);
+        assert_eq!(termial(1), 1);
+        assert_eq!(termial(2), 3);
+        assert_eq!(termial(3), 6);
+        assert_eq!(termial(4), 10);
     }
 }
