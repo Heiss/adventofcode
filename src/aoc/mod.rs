@@ -5,9 +5,19 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 pub fn execute() {
-    let functions = [day1(), day2(), day3(), day4(), day5(), day6(), day7()];
+    let functions = [
+        day1(),
+        day2(),
+        day3(),
+        day4(),
+        day5(),
+        day6(),
+        day7(),
+        day8(),
+    ];
     for (i, function) in functions.iter().enumerate() {
         for (part, f) in function.iter().enumerate() {
             println!("Day {} - Part {}: {}", i + 1, part + 1, f);
@@ -56,4 +66,8 @@ fn day6() -> Vec<String> {
 
 fn day7() -> Vec<String> {
     [format!("{}", day7::part1()), format!("{}", day7::part2())].to_vec()
+}
+
+fn day8() -> Vec<String> {
+    [format!("{}", day8::part1()), format!("{}", day8::part2())].to_vec()
 }
